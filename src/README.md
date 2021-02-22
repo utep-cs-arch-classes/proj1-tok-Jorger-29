@@ -3,6 +3,7 @@ Project 1: Tokenizer
 ## Instructions:
 
 To start the program, just use "make main" and it will be ready to run.
+
 ====================
 # Instructions:
 
