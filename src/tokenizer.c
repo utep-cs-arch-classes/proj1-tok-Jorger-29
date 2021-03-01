@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "tokenizer.h"
 
 /* Return true (non-zero) if c is a whitespace characer
@@ -58,4 +59,30 @@ int count_words(char *str){
     }
   }
   return counter;
+}
+
+
+/* Returns a freshly allocated new zero-terminated string
+   containing <len> chars from <inStr> */
+char *copy_str(char *inStr, short len){
+  char *copy = (char *)malloc(len);
+  for(int i=0; i<len ; i++){
+    *(copy+i) = *(inStr+i);
+  }
+  *(copy+len) = '\n';
+  return copy;
+}
+
+/* Prints all tokens. */
+void print_tokens(char **tokens){
+  for(int i=0; *(tokens+i) != '\0'; i++){
+    printf("%s\n",*(tokens+i));
+  }
+}
+
+/* Frees all tokens and the vector containing them. */
+void free_tokens(char **tokens){
+  for(int i=0; *(tokens+i) != '\0'; i++){
+    free(tokens[i]);
+  }
 }
