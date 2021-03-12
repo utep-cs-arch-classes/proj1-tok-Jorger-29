@@ -31,9 +31,7 @@ void add_history(List *list, char *str){
    List* list - the linked list
    int id - the id of the Item to find */
 char *get_history(List *list, int id){
-    printf("%d",id);
   Item *root = list->root;
-  printf("%d",id);
   int count = 1;
   while(root->next != NULL){
     if(root-> id == id){

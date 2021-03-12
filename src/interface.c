@@ -25,7 +25,11 @@ void main(){
       }
     }else if(counter == 2){
       if(token[counter-2] == '!'){
-	char* str = get_history(list, token[counter-1]);
+	char listelementc[2];
+        listelementc[0] = token[counter-1];
+	listelementc[1] = NULL;
+	int listelement = atoi(listelementc);
+	char* str = get_history(list, listelement);
 	printf("%s\n",str);
       }
     }else{ 
