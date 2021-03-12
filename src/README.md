@@ -3,6 +3,8 @@
 ## Instructions:
 
 To start the program, just use "make main" and it will be ready to run.
+To use the history, just use the '!' followed by the id of the story. (Ex. !3)
+To view all the saved histories use the character '~' to see all available.
 
 # Instructions:
 
