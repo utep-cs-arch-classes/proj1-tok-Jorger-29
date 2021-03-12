@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "tokenizer.h"
 
 /* Return true (non-zero) if c is a whitespace characer
@@ -85,4 +86,25 @@ void free_tokens(char **tokens){
   for(int i=0; *(tokens+i) != '\0'; i++){
     free(tokens[i]);
   }
+}
+
+/* Returns a freshly allocated zero-terminated vector of freshly allocated
+   space-separated tokens from zero-terminated str.
+
+   For example, tokenize("hello world string") would result in:
+     tokens[0] = "hello"
+     tokens[1] = "world"
+     tokens[2] = "string"
+     tokens[3] = 0
+*/
+char **tokenize(char* str){
+  char words = count_words(str)+1;
+  char **arr = (char **)malloc(sizeof(char *) * (words+1));
+  int i=0;
+  arr[i] = strtok(str, " ");
+  for(i=1; i < words ;i++){
+    arr[i] = strtok(NULL, " ");
+  }
+  arr[i++] = '\0';
+  return arr;
 }
